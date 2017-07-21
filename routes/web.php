@@ -11,13 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+  'uses' => 'IndexController@index',
+  'as' => 'index.index'
+]);
+Route::get('/post/{post}', [
+  'uses' => 'IndexController@showPost',
+  'as' => 'index.showPost'
+]);
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index');
 
 
 Route::group(['prefix' => 'admin'], function () {
