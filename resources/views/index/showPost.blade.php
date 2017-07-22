@@ -18,12 +18,6 @@
   </div>
   <hr>
   <h4 class="post-subtitle">Comments</h4>
-  <hr>
 
-  @foreach ($comment as $comments)
-
-      <p class="post-meta">{{$comments->content}}</p>
-
-  @endforeach
 
 @endsection
