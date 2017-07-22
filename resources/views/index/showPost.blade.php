@@ -1,6 +1,8 @@
 @extends('layouts.homelayout')
 @section('head')
   <title>{!!$post->title!!}</title>
+
+  <link rel="stylesheet" href="./css/postStyles.min.css">
 @endsection
 
 @section('body')
