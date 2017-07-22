@@ -16,6 +16,7 @@
 
     <!-- Theme CSS -->
     <link href="/css/clean-blog.min.css" rel="stylesheet">
+    
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -29,6 +30,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     @yield('head')
+    <link href="/css/indexStyles.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -59,7 +61,7 @@
                     <div class="site-heading">
                         <h1>Mate Blog</h1>
                         <hr class="small">
-                        <span class="subheading">Sweet is in bitterness</span>
+                        <span class="subheading">all about yerba mate</span>
                     </div>
                 </div>
             </div>
