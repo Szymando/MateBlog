@@ -8,7 +8,7 @@ use TCG\Voyager\Models\Post;
 
 class Comment extends Model
 {
-    public function postsId(){
+    public function postId(){
       return $this->belongsTo(Post::class);
     }
 }

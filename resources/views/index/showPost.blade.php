@@ -5,14 +5,13 @@
 
 @section('body')
   <div class="post-preview">
-      <a href="{{route('index.showPost', $post)}}">
-          <h2 class="post-title">
+          <h1 class="post-title">
               {!!$post->title!!}
-          </h2>
-          <h3 class="post-subtitle">
+          </h1>
+          <img src="{!!$post->image!!}">
+          <h4 class="post-subtitle">
               {!!$post->body!!}
-          </h3>
-      </a>
+          </h4>
       <p class="post-meta">Posted at {!!$post->created_at!!}</p>
   </div>
 @endsection
