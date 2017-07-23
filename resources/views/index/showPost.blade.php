@@ -45,9 +45,9 @@
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       @foreach ($post->comments as $comment)
-        {{$comment->content}}
+        <h3 class="post-subtitle">{{$comment->name}} <h6>{{$comment->created_at}}<h6></h3>  <p>{{$comment->content}}</p>
+        <hr>
       @endforeach
-      //comments
     </div>
   </div>
 

@@ -40,7 +40,7 @@ class CommentsController extends Controller
         $this->validate($request, array(
           'name' => 'required|max:255',
           'email' => 'required|max:255',
-          'comment' => 'required|min:5|max:2000'
+          'content' => 'required|min:5|max:2000'
         ));
 
         $post = Post::find($post_id);
@@ -54,7 +54,7 @@ class CommentsController extends Controller
         $comments->save();
 
         Session::flash('success', 'Comment was added');
-        return redirect()->route('index.showPost', [$post->slug]);
+        return redirect()->route('index.showPost' ,[$post->id]);
     }
 
     /**
