@@ -18,18 +18,19 @@ Route::get('/', [
   'uses' => 'IndexController@index',
   'as' => 'index.index'
 ]);
+
 Route::get('/post/{post}', [
   'uses' => 'IndexController@showPost',
   'as' => 'index.showPost'
 ]);
 
+//comments
+Route::post('/comments/{post_id}', [
+  'uses' => 'CommentsController@store',
+  'as' => 'comments.store'
+]);
+
 Auth::routes();
-
-
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
-
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
