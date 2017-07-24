@@ -32,17 +32,27 @@
     @yield('head')
     <link href="/css/indexStyles.min.css" rel="stylesheet">
     <link href="/css/css/fontello.css" rel="stylesheet">
+    <link href="/css/loader.min.css" rel="stylesheet">
 </head>
 
 <body>
+<script>
+
+</script>
+<section class="loader">
+    <span class="circle__out">
+        <span class="gap__color"></span>
+        <span class="circle__in"></span>
+    </span>
+</section>
 <section class="wrapper" id="app">
     <!-- Navigation -->
     <nav class="menu">
         <button class="menu__icon" type="button" role="menu extender"><span class="icon-th-list"></span></button>
         <ul class="menu__items">
             <li class="menu__item"><a href="#" class="menu__item-icon icon-home"></a></li>
-            <li class="menu__item"><a href="#" class="menu__item-icon icon-users"></a></li>
-            <li class="menu__item"><a href="#" class="menu__item-icon icon-contacts"></a></li>
+            <li class="menu__item"><a href="/about-us" class="menu__item-icon icon-users"></a></li>
+            <li class="menu__item"><a href="/contact" class="menu__item-icon icon-contacts"></a></li>
         </ul>
         <!-- /.container -->
     </nav>
@@ -61,10 +71,10 @@
           <div class="post__preview">
               <a class="post__link" href="">
                   <h2 class="post__title">
-                      Tytul Posta
+                      Yerba is amazing!
                   </h2>
                   <h3 class="post__subtitle">
-                      Podtytul Posta
+                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis velit nemo eum, dicta quidem! Sequi ut pariatur officiis incidunt, quo!
                   </h3>
               </a>
               <p class="post__meta">Posted at DATE</p>

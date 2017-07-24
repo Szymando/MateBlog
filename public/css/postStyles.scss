@@ -1,8 +1,12 @@
+:root{
+    --textColor: #fff;
+}
+
 .posts{
     width: 100%;
     height: auto;
     background: transparent;
-    color: #fff;
+    color: var(--textColor);
     margin-top: 5%;
 
     .post__preview{
@@ -10,8 +14,8 @@
         height: auto;
 
         .post__title{
-            color: #fff;
-            font-size: 3rem;
+            color: var(--textColor);
+            font-size: 2.5rem;
             text-align: center;
             text-decoration: none;
         }
@@ -19,10 +23,10 @@
             font-size: 1rem;
             text-align: center;
             text-decoration: none;
-            color: #fff;
+            color: var(--textColor);
         }
         .post__meta{
-            color: #fff;
+            color: var(--textColor);
             text-align: center;
         }
         .post__link{
