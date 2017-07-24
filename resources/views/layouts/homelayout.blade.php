@@ -12,10 +12,10 @@
     
 
     <!-- Bootstrap Core CSS -->
-    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <!-- Theme CSS -->
-    <link href="/css/clean-blog.min.css" rel="stylesheet">
+    <!-- <link href="/css/clean-blog.min.css" rel="stylesheet"> -->
     
 
     <!-- Custom Fonts -->
@@ -31,99 +31,58 @@
     <![endif]-->
     @yield('head')
     <link href="/css/indexStyles.min.css" rel="stylesheet">
+    <link href="/css/css/fontello.css" rel="stylesheet">
 </head>
 
 <body>
-
+<section class="wrapper" id="app">
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
-            </div>
-
-
-        </div>
+    <nav class="menu">
+        <button class="menu__icon" type="button" role="menu extender"><span class="icon-th-list"></span></button>
+        <ul class="menu__items">
+            <li class="menu__item"><a href="#" class="menu__item-icon icon-home"></a></li>
+            <li class="menu__item"><a href="#" class="menu__item-icon icon-users"></a></li>
+            <li class="menu__item"><a href="#" class="menu__item-icon icon-contacts"></a></li>
+        </ul>
         <!-- /.container -->
     </nav>
 
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <header class="header">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>Mate Blog</h1>
-                        <hr class="small">
-                        <span class="subheading">all about yerba mate</span>
-                    </div>
-                </div>
-            </div>
+            <h1 class="heading">MateBlog</h1>
+            <span class="subheading">All about yerba mate</span>
         </div>
     </header>
 
     <!-- Main Content -->
-    <div class="container">
+    <main class="main">
       @yield('body')
-    </div>
-
-    <hr>
+      <section class="posts">
+          <div class="post__preview">
+              <a class="post__link" href="">
+                  <h2 class="post__title">
+                      Tytul Posta
+                  </h2>
+                  <h3 class="post__subtitle">
+                      Podtytul Posta
+                  </h3>
+              </a>
+              <p class="post__meta">Posted at DATE</p>
+          </div>
+          <hr>
+    </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted">Copyright &copy; Mate Blog 2016</p>
-                </div>
-            </div>
-        </div>
+    <footer class="fotter">
     </footer>
-
+</section>
     <!-- jQuery -->
     <script src="/vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="/js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="/js/clean-blog.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+    <script src="./js/main.js"></script>
 
 </body>
 

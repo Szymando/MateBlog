@@ -2,26 +2,25 @@
 
 @section('head')
   <title>Mate Blog</title>
+  <link rel="stylesheet" href="/css/postStyles.min.css">
 @endsection
 
 @section('body')
-  <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <section class="posts">
         @foreach ($posts as $post)
-          <div class="post-preview">
+          <div class="post__preview">
               <a href="{{route('index.showPost', $post)}}">
-                  <h2 class="post-title">
+                  <h2 class="post__title">
                       {!!$post->title!!}
                   </h2>
-                  <h3 class="post-subtitle">
+                  <h3 class="post__subtitle">
                       {!!$post->body!!}
                   </h3>
               </a>
-              <p class="post-meta">Posted at {!!$post->created_at!!}</p>
+              <p class="post__meta">Posted at {!!$post->created_at!!}</p>
           </div>
           <hr>
         @endforeach
-      </div>
-  </div>
+    </section>
 
 @endsection

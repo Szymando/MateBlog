@@ -1,4 +1,136 @@
+@mixin textShadow($pos){
+    text-shadow: $pos $pos $pos rgba(0, 0, 0, 1);
+}
+
+:root{
+    --mainBgColor: #1b1b1b;
+    --headerBg: url('../img/mob_header-bg-3.jpg');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 body{
     background: #1b1b1b;
     color: #fff;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
 }
+.wrapper{
+    min-width: 100%;
+    min-height: 100%;
+    display: grid;
+    grid-template: 40vh 100vh 10vh / 1fr 1fr;
+    grid-template-areas:
+        "head head"
+        "body body"
+        "fotter fotter"
+    ;
+}
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    position: fixed;
+    flex-flow: column;
+    flex-wrap: wrap;
+    color: #fff;
+    font-size: 2rem;
+    width: 100%;
+    height: 100vh;
+    overflow: visible;
+
+    .menu__icon{
+        position: fixed;
+        background: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        height: 8vh;
+        overflow: hidden;
+        line-height: 1.4;
+        border: none;
+        color: #fff;
+        font-size: 2.2rem;
+        z-index: 2;
+    }
+    .menu__items{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: none;
+        width: 100%;
+        height: 92vh;
+        z-index: 1;
+
+        .menu__item{
+            display: flex;
+            width: 100%;
+            height: calc(92vh / 3);
+            align-content: center;
+
+            &:nth-child(1){
+                background: url('../img/home-menu-bg.jpg') no-repeat center center ;
+                background-size: cover;
+            }
+            &:nth-child(2){
+                background: url('../img/aboutus-menu-bg.jpg') no-repeat center center ;
+                background-size: cover;
+            }
+            &:nth-child(3){
+                background: url('../img/contact-menu-bg.jpg') no-repeat center center ;
+                background-size: cover;
+            }
+
+            &-icon{
+                display: block;
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: calc(92vh / 3);
+                font-size: 3rem;
+                color: #fff;
+                text-align: center;
+                text-decoration: none;
+                line-height: 3.9;
+                @include textShadow(4px);
+            }
+        }
+    }
+    .menu-extended{
+        display: block;
+    }
+}//End of menu
+.header{
+    grid-area: head;
+    background: var(--headerBg) no-repeat center center;
+    background-size: cover;
+
+    .container{
+        width: 100%;
+        height: 50%;
+        margin-top: 25%;
+        color: #fff;
+        text-align: center;
+        padding-top: 5%;
+        @include textShadow(5px);
+        .heading{
+            font-size: 3rem;
+        }
+        .subheading{
+            font-size: 1rem;
+        }
+    }
+}//End of header
+.main{
+    grid-area: body;
+    background: var(--mainBgColor);
+}//End of main
+.fotter{
+    grid-area: fotter;
+}//end of fotter

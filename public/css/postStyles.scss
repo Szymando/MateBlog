@@ -1,0 +1,32 @@
+.posts{
+    width: 100%;
+    height: auto;
+    background: transparent;
+    color: #fff;
+    margin-top: 5%;
+
+    .post__preview{
+        width: 100%;
+        height: auto;
+
+        .post__title{
+            color: #fff;
+            font-size: 3rem;
+            text-align: center;
+            text-decoration: none;
+        }
+        .post__subtitle{
+            font-size: 1rem;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+        }
+        .post__meta{
+            color: #fff;
+            text-align: center;
+        }
+        .post__link{
+            text-decoration: none;
+        }
+    }
+}
