@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    
+
 
     <!-- Bootstrap Core CSS -->
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
     <link href="/css/clean-blog.min.css" rel="stylesheet">
-    
+
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -44,7 +44,21 @@
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+                <a class="navbar-brand" href="/">Homepage</a>
+                @if(Auth::guest())
+                  <a class="navbar-brand" href="/login">Sign in</a>
+                  <a class="navbar-brand" href="/register">Sign up</a>
+                @else
+                  <a class="navbar-brand" href="{{ url('/logout') }}"
+                      onclick="event.preventDefault();
+                               document.getElementById('logout-form').submit();">
+                      Logout
+                  </a>
+
+                  <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                      {{ csrf_field() }}
+                  </form>
+                @endif
             </div>
 
 
@@ -106,7 +120,7 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; Mate Blog 2016</p>
+                    <p class="copyright text-muted">Copyright &copy; MateBlog 2016</p>
                 </div>
             </div>
         </div>
