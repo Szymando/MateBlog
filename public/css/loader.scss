@@ -12,14 +12,15 @@
     box-shadow: $offSet $offSet $blur $spread rgba(0,0,0,0.75);
 }
 :root{
-    --circleInRadius: 70vw; 
+    --circleInRadius: 50vw;
+    --circleInRadius2: 40vw; 
 }
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-
+@media only screen and (max-width: 414px){
 .loader{
     position: fixed;
     width: 100vw;
@@ -42,7 +43,7 @@
             text-align: center;
             align-content: center;
             align-items: center;
-            @include circle(80vw, #1b1b1b);
+            @include circle(60vw, #1b1b1b);
             @include shadowBox(0px, 7px, 2px);
         }
     }
@@ -59,4 +60,48 @@
     0%{transform: translateY(-100%);}
     50%{transform: translateY(100%);}
     100%{transform: translateY(-100%);}
+}
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1024px){
+.loader{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: #3c3c3c;
+    z-index: 100;
+
+    .circle__{
+        &in{
+            @include circle(var(--circleInRadius2), #fff);
+            position: fixed;
+            left: calc(50vw - (var(--circleInRadius2) / 2));
+            align-self: center;
+            @include shadowBox(0px, 7px, 2px);
+        }
+        &out{
+            position: relative;
+            top: 25%;
+            display: flex; 
+            text-align: center;
+            align-content: center;
+            align-items: center;
+            @include circle(50vw, #1b1b1b);
+            @include shadowBox(0px, 7px, 2px);
+        }
+    }
+    .gap__color{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #00ffff;
+        animation: loader 3s 0s ease-in-out infinite; 
+    }
+}
+
+@keyframes loader{
+    0%{transform: translateY(-100%);}
+    50%{transform: translateY(100%);}
+    100%{transform: translateY(-100%);}
+}
 }
