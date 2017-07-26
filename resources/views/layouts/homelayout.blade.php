@@ -77,9 +77,12 @@
     <!-- Footer -->
     <footer class="fotter">
         <div class="social">
-            <img src="/svg/facebook.svg" alt="facebook icon" class="social__item">
-            <img src="/svg/twitter.svg" alt="twitter icon" class="social__item">
-            <img src="/svg/instagram.svg" alt="instagram icon" class="social__item">
+            <span class="social__text">see us also at:</span>
+            <div class="social__items">
+                <img src="/svg/facebook.svg" alt="facebook icon" class="social__item">
+                <img src="/svg/twitter.svg" alt="twitter icon" class="social__item">
+                <img src="/svg/instagram.svg" alt="instagram icon" class="social__item">
+            </div>
         </div>
         <span class="copyright__text">MateBlog&#9400; 2017</span>
     </footer>

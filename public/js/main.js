@@ -25,10 +25,15 @@ $(function(){
             let number = Math.floor(Math.random() * (4 - 1)+ 1);
             console.log(Number(number));
             let header = document.querySelector('header.header').style;
-                if(window.innerWidth < 500){
+                if(window.innerWidth <= 500){
                     header.setProperty('--headerBg', `url("../img/mob_header-bg-${number}.jpg")`);
                 }
-                else{header.setProperty('--headerBg', `url("../img/header-bg-${number}.jpg")`);}
+                else if(window.innerWidth >= 768 && window.innerWidth <= 1024){
+                    header.setProperty('--headerBg', `url("../img/header-bg-${number}.jpg")`);
+                }
+                else if(window.innerWidth >= 1025 && window.innerWidth <= 1366){
+                    header.setProperty('--headerBg', `url("../img/med_header-bg-${number}.jpg")`);
+                }
         }
     randomHeader();
         const menu = function(e){
@@ -37,6 +42,7 @@ $(function(){
         }
     //Events
     document.querySelector('button.menu__icon').addEventListener('click', menu, true);
+    window.addEventListener('resize', randomHeader, true);
     (function(e){                                                               //Hiding Loader
         $('section.loader').fadeOut(1000);
     })();
