@@ -6,6 +6,7 @@ const app = new Vue({
         msg: "MateBlog",
         posts: [
             {title: 'Koteczki', body: 'lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor', date: '15/01/2016'},
+            {title: 'Psy', body: 'lorem ipsum', date: '17/04/2016'},
             {title: 'Psy', body: 'lorem ipsum', date: '17/04/2016'}
         ]
     },
@@ -33,6 +34,9 @@ $(function(){
                 }
                 else if(window.innerWidth >= 1025 && window.innerWidth <= 1366){
                     header.setProperty('--headerBg', `url("../img/med_header-bg-${number}.jpg")`);
+                }
+                else if(window.innerWidth >= 1367 && window.innerWidth <= 1920){
+                    header.setProperty('--headerBg', `url("../img/big_header-bg-${number}.jpg")`);
                 }
         }
     randomHeader();
