@@ -12,7 +12,7 @@
 
 @section('body')
     <section class="posts">
-        @foreach ($posts as $post)
+        @foreach ($posts->sortByDesc('created_at') as $post)
           <div class="post__preview">
               <a href="{{route('index.showPost', $post)}}">
                   <h2 class="post__title">
