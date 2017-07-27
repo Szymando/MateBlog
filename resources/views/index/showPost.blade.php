@@ -21,6 +21,7 @@
   <h4 class="post-subtitle">Add your Comment</h4>
   <div class="row">
     <div id="comment-form" class="col-md-8 col-md-offset-2" style="margin-top:3%">
+    @if(Auth::guest())
       {!!Form::open(['route' => ['comments.store', $post->id], 'method' => 'POST'])!!}
         <div class="row">
           <div class="col-md-6">
@@ -38,6 +39,20 @@
           </div>
         </div>
       {!!Form::close()!!}
+    @else
+      {!!Form::open(['route' => ['comments.store', $post->id], 'method' => 'POST'])!!}
+        <div class="row">
+            {!!Form::hidden('name', Auth::user()->name)!!}
+            {!!Form::hidden('email', Auth::user()->email)!!}
+
+          <div class="col-md-12">
+            {!!Form::label('content', "Comment:")!!}
+            {!!Form::textarea('content', null, ['class' => 'form-control'])!!}
+            {!!Form::submit('Add Comment', ['class' => 'btn btn-success btn-block', 'style' => 'margin-top:5%'])!!}
+          </div>
+        </div>
+      {!!Form::close()!!}
+    @endif
     </div>
   </div>
   <hr>
@@ -45,7 +60,7 @@
   <hr>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
-      @foreach($post->comments as $comment)
+      @foreach($post->comments->sortByDesc('created_at') as $comment)
         <h3 class="post-subtitle">
           {{$comment->name}}
           <h6>{{$comment->created_at}}<h6>

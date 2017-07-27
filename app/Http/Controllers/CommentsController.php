@@ -50,7 +50,7 @@ class CommentsController extends Controller
         $comments->email = $request->email;
         $comments->content = $request->content;
         $comments->approved = true;
-        $comments->post()->associate($post);
+        $comments->postId()->associate($post);
         $comments->save();
 
         Session::flash('success', 'Comment was added');
