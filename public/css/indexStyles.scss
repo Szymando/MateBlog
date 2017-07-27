@@ -609,6 +609,7 @@ body{
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 2000;
     width: 100vw;
     height: 10vh;
     display: flex;
@@ -658,6 +659,7 @@ body{
     grid-area: head;
     background: var(--headerBg) no-repeat center center;
     background-size: cover;
+    @include shadowBox(1px, 5px, 2px);
 
     .container{
         width: 100%;
@@ -679,6 +681,9 @@ body{
     grid-area: body;
     background: var(--mainBg2) no-repeat center center fixed;
     background-size: cover;
+    display: grid;
+    grid-template: 1fr / 1fr 40vw;
+    grid-gap: 1vw;
     .posts{
         position: relative;
         top: 0;
@@ -686,21 +691,20 @@ body{
         width: 99vw;
         height: 100%;
         display: grid;
-        grid-template: repeat(8, 1fr) / 1fr 1fr;
-        background: transparent;
         color: var(--textColor);
 
 
             .post__preview{
+                --textColor: #000;
                 box-sizing: content-box;
                 text-align: center;
-                margin: 1vw;
-                background-color: rgba(0, 0, 0, 0.8);
+                margin: 0.7vw;
+                background-color: rgba(255, 255, 255, 1);
                 @include shadowBox(4px,5px ,2px);
                 @include anim(box-shadow, 0.5s, 0s);
-                &:nth-child(1), &:nth-child(2){
-                    margin: 0% 1vw;
-                }
+                    &:nth-child(1), &:nth-child(2), &:nth-child(3){
+                        margin: 0 0.7vw;
+                    }
 
                 &:hover{
                     @include shadowBox(0px,3px ,0px);

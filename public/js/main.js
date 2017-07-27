@@ -7,7 +7,9 @@ const app = new Vue({
         posts: [
             {title: 'Koteczki', body: 'lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor', date: '15/01/2016'},
             {title: 'Psy', body: 'lorem ipsum', date: '17/04/2016'},
-            {title: 'Psy', body: 'lorem ipsum', date: '17/04/2016'}
+            {title: 'Psy', body: 'lorem ipsum', date: '17/04/2016'},
+            {title: 'Psy', body: 'lorem ipsum', date: '17/04/2016'},
+            {title: 'Psy', body: 'lorem ipsum', date: '17/04/2016'},
         ]
     },
     methods: {
@@ -38,6 +40,11 @@ $(function(){
                 else if(window.innerWidth >= 1367 && window.innerWidth <= 1920){
                     header.setProperty('--headerBg', `url("../img/big_header-bg-${number}.jpg")`);
                 }
+        }
+        const randomPreviewBg = (e) => {
+            let colors = ['#ff9900', '#00f2ff', '#ffc700'];
+            let posts = document.querySelectorAll('.post__preview');
+            console.log(posts[1]);
         }
     randomHeader();
         const menu = function(e){
