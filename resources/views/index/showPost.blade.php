@@ -1,8 +1,12 @@
 @extends('layouts.homelayout')
 
-@section('head')
-  <title>MateBlog | {!!$post->title!!}</title>
+@section('meta')
+  <meta name="keywords" content="{!!$post->meta_keywords!!}">
+  <meta name="description" content="{!!$post->meta_description!!}">
+@endsection
 
+@section('head')
+  <title>MateBlog | {!!$post->seo_title!!}</title>
   <link rel="stylesheet" href="./css/postStyles.min.css">
 @endsection
 

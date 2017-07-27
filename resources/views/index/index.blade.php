@@ -1,7 +1,12 @@
 @extends('layouts.homelayout')
 
+@section('meta')
+  <meta name="keywords" content="Yerba, Mate, Blog, Everything About Mate">
+  <meta name="description" content="All about Yerba Mate">
+@endsection
+
 @section('head')
-  <title>Mate Blog</title>
+  <title>Mate Blog | Home</title>
   <link rel="stylesheet" href="/css/postStyles.min.css">
 @endsection
 
@@ -17,7 +22,7 @@
                       {!!$post->excerpt!!}
                   </h3>
               </a>
-              <p class="post__meta">Posted at {!!$post->created_at!!}</p>
+              <p class="post__meta">Posted at "{!!$post->created_at!!}"</p>
           </div>
           <hr>
         @endforeach
