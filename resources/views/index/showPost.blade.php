@@ -1,4 +1,5 @@
 @extends('layouts.homelayout')
+
 @section('head')
   <title>MateBlog | {!!$post->title!!}</title>
 
