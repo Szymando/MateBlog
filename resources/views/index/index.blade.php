@@ -7,7 +7,7 @@
 
 @section('body')
     <section class="posts">
-      <!--
+      
         @foreach ($posts as $post)
 
           <div class="post__preview">
@@ -23,7 +23,7 @@
           </div>
           <hr>
         @endforeach
-      -->
+      <!--
           <div class="post__preview" v-for="post in posts">
               <a class="post__link" href="">
                   <h2 class="post__title">
@@ -35,6 +35,7 @@
               </a>
               <p class="post__meta">@{{ post.date }}</p>
           </div>
+        -->
     </section>
 
 @endsection
