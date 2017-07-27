@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Comment;
+use App\User;
 use TCG\Voyager\Models\Post;
 use Session;
 
@@ -44,17 +45,22 @@ class CommentsController extends Controller
         ));
 
         $post = Post::find($post_id);
-
+        $user = new User();
         $comments = new Comment();
+
         $comments->name = $request->name;
         $comments->email = $request->email;
         $comments->content = $request->content;
         $comments->approved = true;
         $comments->postId()->associate($post);
+        if($comments->email == $user->email){
+          Session::flash('danger', 'E-mail, that u trying to use, is already registered');
+          return redirect()->route('index.showPost' ,[$post->id]);
+        }else {
         $comments->save();
-
         Session::flash('success', 'Comment was added');
         return redirect()->route('index.showPost' ,[$post->id]);
+      }
     }
 
     /**
