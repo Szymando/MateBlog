@@ -11,57 +11,58 @@
 @endsection
 
 @section('body')
-
+<section class="post">
   <div class="post__preview">
           <h1 class="post__title">
               {!!$post->title!!}
           </h1>
-          <h4 class="post__body">
+          <article class="post__body">
               {!!$post->body!!}
-          </h4>
-      <p class="post-meta">Posted at {!!$post->created_at!!}</p>
+          </article>
+      <time class="post-meta">Posted at {!!$post->created_at!!}</time>
   </div>
-  <hr>
-  <h4 class="post-subtitle">Add your Comment</h4>
-  <div class="row">
-    <div id="comment-form" class="col-md-8 col-md-offset-2" style="margin-top:3%">
-    @if(Auth::guest())
-      {!!Form::open(['route' => ['comments.store', $post->id], 'method' => 'POST'])!!}
-        <div class="row">
-          <div class="col-md-6">
-            {!!Form::label('name', "Name:")!!}
-            {!!Form::text('name', null, ['class' => 'form-control'])!!}
+</section>
+<section class="comments">
+  <section class="comments__writing">
+    <span class="comments__header">Add your Comment</span>
+    <div class="form">
+    <div id="comment__form" class="comment__form">
+      @if(Auth::guest())
+        {!!Form::open(['route' => ['comments.store', $post->id], 'method' => 'POST'])!!}
+          <div class="comment-form">
+            <div class="name">
+              {!!Form::label('name', "Name:")!!}
+              {!!Form::text('name', null, ['class' => 'form-control'])!!}
+            </div>
+            <div class="email">
+              {!!Form::label('email', "E-mail:")!!}
+              {!!Form::text('email', null, ['class' => 'form-control', 'rows' => '5'])!!}
+            </div>
+            <div class="comment">
+              {!!Form::label('content', "Comment:")!!}
+              {!!Form::textarea('content', null, ['class' => 'form-control'])!!}
+              {!!Form::submit('Add Comment', ['class' => 'btn btn-success btn-block', 'style' => 'margin-top:5%'])!!}
+            </div>
           </div>
-          <div class="col-md-6">
-            {!!Form::label('email', "E-mail:")!!}
-            {!!Form::text('email', null, ['class' => 'form-control', 'rows' => '5'])!!}
-          </div>
-          <div class="col-md-12">
-            {!!Form::label('content', "Comment:")!!}
-            {!!Form::textarea('content', null, ['class' => 'form-control'])!!}
-            {!!Form::submit('Add Comment', ['class' => 'btn btn-success btn-block', 'style' => 'margin-top:5%'])!!}
-          </div>
-        </div>
-      {!!Form::close()!!}
-    @else
-      {!!Form::open(['route' => ['comments.store', $post->id], 'method' => 'POST'])!!}
-        <div class="row">
+        {!!Form::close()!!}
+      @else
+        {!!Form::open(['route' => ['comments.store', $post->id], 'method' => 'POST'])!!}
+          <div class="row">
             {!!Form::hidden('name', Auth::user()->name)!!}
             {!!Form::hidden('email', Auth::user()->email)!!}
 
-          <div class="col-md-12">
-            {!!Form::label('content', "Comment:")!!}
-            {!!Form::textarea('content', null, ['class' => 'form-control'])!!}
-            {!!Form::submit('Add Comment', ['class' => 'btn btn-success btn-block', 'style' => 'margin-top:5%'])!!}
+            <div class="comment__writing-items">
+              {!!Form::label('content', "Comment:")!!}
+              {!!Form::textarea('content', null, ['class' => 'form-control'])!!}
+              {!!Form::submit('Add Comment', ['class' => 'btn btn-success btn-block', 'style' => 'margin-top:5%'])!!}
+            </div>
           </div>
-        </div>
-      {!!Form::close()!!}
-    @endif
+        {!!Form::close()!!}
+      @endif
     </div>
-  </div>
-  <hr>
-  <h4 class="post-subtitle">Comments</h4>
-  <hr>
+    </div>
+  </section>
+  <h4 class="comments__header">Comments</h4>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       @foreach($post->comments->sortByDesc('created_at') as $comment)
@@ -70,10 +71,10 @@
           <h6>{{$comment->created_at}}<h6>
         </h3>
         <p>{!!$comment->content!!}</p>
-        <hr>
       @endforeach
     </div>
   </div>
+</section>
     <script
   src="http://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="

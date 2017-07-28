@@ -44,12 +44,7 @@ $(function(){
             e.preventDefault();
             document.querySelector('ul.menu__items').classList.toggle('menu-extended');
         }
-        const logPop = (e) => {
-            e.preventDefault();
-            document.querySelector('section.log').fadeIn();
-        } 
     //Events
-    document.querySelector('a.icon-login').addEventListener('click', logPop, true);
     document.querySelector('button.menu__icon').addEventListener('click', menu, true);
     window.addEventListener('resize', randomHeader, true);
     (function(e){                                                               //Hiding Loader
