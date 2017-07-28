@@ -45,6 +45,8 @@
             <li class="menu__item"><a href="#" class="menu__item-icon icon-home"></a></li>
             <li class="menu__item"><a href="/about-us" class="menu__item-icon icon-users"></a></li>
             <li class="menu__item"><a href="/contact" class="menu__item-icon icon-contacts"></a></li>
+            <li class="menu__item"><a href="/login" class="menu__item-icon icon-login"></a></li>
+            <!-- <li class="menu__item"><a href="/logout" class="menu__item-icon icon-logout"></a></li> -->
         </ul>
         <!-- /.container -->
     </nav>

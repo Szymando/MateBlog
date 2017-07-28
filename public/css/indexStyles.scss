@@ -85,20 +85,20 @@ body{
         .menu__item{
             display: flex;
             width: 100%;
-            height: calc(92vh / 3);
+            height: calc(92vh / 4);
             align-content: center;
 
             &:nth-child(1){
-                background: rgba(0,255,255,0.9) no-repeat center center ;
-                background-size: cover;
+                background: rgba(0,255,255,0.9);
             }
             &:nth-child(2){
-                background: rgba(0,0,0,0.9) no-repeat center center ;
-                background-size: cover;
+                background: rgba(0,0,0,0.9);
             }
             &:nth-child(3){
-                background: rgba(232,190,25,0.9) no-repeat center center ;
-                background-size: cover;
+                background: rgba(232,190,25,0.9);
+            }
+            &:nth-child(4){
+                background: rgba(255,67,0,0.9);
             }
 
             &-icon{
@@ -368,6 +368,7 @@ body{
 }
 }//End of main
 .fotter{
+    height: auto;
     grid-area: fotter;
 
     .social{
@@ -545,12 +546,12 @@ body{
 }
 }//End of main
 .fotter{
+    height: auto;
     grid-area: fotter;
 
     .social{
         width: 100%;
         height: auto;
-        margin-top: 0.1rem;
         @supports(display: flex){
             display: flex;
             flex-flow: column;
@@ -574,8 +575,8 @@ body{
         }
 
         .social__item{
-            width: calc(100vw / 9);
-            height: calc(100vw / 9);
+            width: calc(100vw / 12);
+            height: calc(100vw / 12);
             margin: auto;
             float: left;
             &::after{
@@ -741,6 +742,7 @@ body{
     }
 }//End of main
 .fotter{
+    height: auto;
     grid-area: fotter;
 
     .social{
@@ -770,8 +772,8 @@ body{
         }
 
         .social__item{
-            width: calc(100vw / 9);
-            height: calc(100vw / 9);
+            width: calc(100vw / 14);
+            height: calc(100vw / 14);
             margin: auto;
             float: left;
             &::after{

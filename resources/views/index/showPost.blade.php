@@ -7,16 +7,16 @@
 
 @section('head')
   <title>MateBlog | {!!$post->seo_title!!}</title>
-  <link rel="stylesheet" href="./css/postStyles.min.css">
+  <link rel="stylesheet" href="../../css/postStyles.min.css">
 @endsection
 
 @section('body')
 
-  <div class="post-preview">
-          <h1 class="post-title">
+  <div class="post__preview">
+          <h1 class="post__title">
               {!!$post->title!!}
           </h1>
-          <h4 class="post-subtitle">
+          <h4 class="post__body">
               {!!$post->body!!}
           </h4>
       <p class="post-meta">Posted at {!!$post->created_at!!}</p>
@@ -74,6 +74,11 @@
       @endforeach
     </div>
   </div>
-
+    <script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/vue/2.3.2/vue.js"></script>
+    <script src="../../js/main.js"></script>
 
 @endsection

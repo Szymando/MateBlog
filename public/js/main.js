@@ -3,14 +3,7 @@ console.log(basicLocation);
 const app = new Vue({
     el: '#app',
     data: {
-        msg: "MateBlog",
-        posts: [
-            {title: 'Koteczki', body: 'lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor', date: '15/01/2016'},
-            {title: 'Psy', body: 'lorem ipsum', date: '17/04/2016'},
-            {title: 'Psy', body: 'lorem ipsum', date: '17/04/2016'},
-            {title: 'Psy', body: 'lorem ipsum', date: '17/04/2016'},
-            {title: 'Psy', body: 'lorem ipsum', date: '17/04/2016'},
-        ]
+        msg: "MateBlog"
     },
     methods: {
         changePage: function(e){
@@ -51,7 +44,12 @@ $(function(){
             e.preventDefault();
             document.querySelector('ul.menu__items').classList.toggle('menu-extended');
         }
+        const logPop = (e) => {
+            e.preventDefault();
+            document.querySelector('section.log').fadeIn();
+        } 
     //Events
+    document.querySelector('a.icon-login').addEventListener('click', logPop, true);
     document.querySelector('button.menu__icon').addEventListener('click', menu, true);
     window.addEventListener('resize', randomHeader, true);
     (function(e){                                                               //Hiding Loader

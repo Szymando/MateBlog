@@ -69,20 +69,20 @@ body {
   .menu .menu__items .menu__item {
     display: flex;
     width: 100%;
-    height: calc(92vh / 3);
+    height: calc(92vh / 4);
     align-content: center;
   }
   .menu .menu__items .menu__item:nth-child(1) {
-    background: rgba(0, 255, 255, 0.9) no-repeat center center;
-    background-size: cover;
+    background: rgba(0, 255, 255, 0.9);
   }
   .menu .menu__items .menu__item:nth-child(2) {
-    background: rgba(0, 0, 0, 0.9) no-repeat center center;
-    background-size: cover;
+    background: rgba(0, 0, 0, 0.9);
   }
   .menu .menu__items .menu__item:nth-child(3) {
-    background: rgba(232, 190, 25, 0.9) no-repeat center center;
-    background-size: cover;
+    background: rgba(232, 190, 25, 0.9);
+  }
+  .menu .menu__items .menu__item:nth-child(4) {
+    background: rgba(255, 67, 0, 0.9);
   }
   .menu .menu__items .menu__item-icon {
     display: block;
@@ -332,6 +332,7 @@ body {
     text-decoration: none;
   }
   .fotter {
+    height: auto;
     grid-area: fotter;
   }
   .fotter .social {
@@ -498,12 +499,12 @@ body {
     text-decoration: none;
   }
   .fotter {
+    height: auto;
     grid-area: fotter;
   }
   .fotter .social {
     width: 100%;
     height: auto;
-    margin-top: 0.1rem;
   }
   @supports (display: flex) {
     .fotter .social {
@@ -527,8 +528,8 @@ body {
     flex-flow: row;
   }
   .fotter .social .social__item {
-    width: calc(100vw / 9);
-    height: calc(100vw / 9);
+    width: calc(100vw / 12);
+    height: calc(100vw / 12);
     margin: auto;
     float: left;
   }
@@ -687,6 +688,7 @@ body {
     text-decoration: none;
   }
   .fotter {
+    height: auto;
     grid-area: fotter;
   }
   .fotter .social {
@@ -716,8 +718,8 @@ body {
     flex-flow: row;
   }
   .fotter .social .social__item {
-    width: calc(100vw / 9);
-    height: calc(100vw / 9);
+    width: calc(100vw / 14);
+    height: calc(100vw / 14);
     margin: auto;
     float: left;
   }

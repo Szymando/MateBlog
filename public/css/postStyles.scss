@@ -1,6 +1,26 @@
-:root{
-    
-}
-@media only screen and (max-width: 414px){
+//Imports
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif&subset=latin-ext');
 
+//Code
+:root{
+    --fontColor: #1b1b1b;
+    --bgColor: #eee;
+}
+.post__preview{
+    background: var(--bgColor);
+    width: 100%;
+    height: auto;
+    .post__title{
+        font-size: 4rem;
+        font-family: 'Pacifico', cursive;
+        text-align: center;
+        color: #000;
+    }
+    .post__body{
+        height: auto;
+        font-family: 'Bree Serif', serif;
+        font-size: 2rem;
+        color: #1b1b1b;
+    }
 }

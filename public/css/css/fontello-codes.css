@@ -3,3 +3,5 @@
 .icon-home:before { content: '\e801'; } /* '' */
 .icon-contacts:before { content: '\e802'; } /* '' */
 .icon-users:before { content: '\e803'; } /* '' */
+.icon-login:before { content: '\f02c'; } /* '' */
+.icon-logout-1:before { content: '\f02d'; } /* '' */
