@@ -163,6 +163,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
+        Illuminate\Notifications\Notifiable::class,
+        Illuminate\Contracts\Auth\CanResetPassword::class,
 
         /*
          * Package Service Providers...
