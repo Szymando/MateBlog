@@ -162,9 +162,11 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        //Illuminate\Contracts\Auth\CanResetPassword::class,
         Illuminate\Html\HtmlServiceProvider::class,
-        Illuminate\Notifications\Notifiable::class,
-        Illuminate\Contracts\Auth\CanResetPassword::class,
+        //Illuminate\Notifications\Notifiable::class,
+        //Illuminate\Auth\Passwords\CanResetPassword::class,
+
 
         /*
          * Package Service Providers...
