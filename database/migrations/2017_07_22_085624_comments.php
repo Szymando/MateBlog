@@ -34,7 +34,6 @@ class Comments extends Migration
      */
     public function down()
     {
-        Schema::dropForeign(['post_id']);
         Schema::drop('comments');
     }
 }
