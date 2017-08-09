@@ -14,4 +14,10 @@ class IndexController extends Controller
     public function showPost(Post $post){
       return view('index.showPost', compact('post'));
     }
+    public function aboutUs(){
+      return view('topbar.aboutUs');
+    }
+    public function contact(){
+      return view('topbar.contact');
+    }
 }

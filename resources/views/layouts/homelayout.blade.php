@@ -42,9 +42,9 @@
     <nav class="menu">
         <button class="menu__icon" type="button" role="menu extender"><span class="icon-th-list"></span></button>
         <ul class="menu__items">
-            <li class="menu__item"><a href="#" class="menu__item-icon icon-home"></a></li>
-            <li class="menu__item"><a href="/about-us" class="menu__item-icon icon-users"></a></li>
-            <li class="menu__item"><a href="/contact" class="menu__item-icon icon-contacts"></a></li>
+            <li class="menu__item"><a href="{{route('index.index')}}" class="menu__item-icon icon-home"></a></li>
+            <li class="menu__item"><a href="{{route('index.aboutUs')}}" class="menu__item-icon icon-users"></a></li>
+            <li class="menu__item"><a href="{{route('index.contact')}}" class="menu__item-icon icon-contacts"></a></li>
             <li class="menu__item"><a href="/login" class="menu__item-icon icon-login"></a></li>
             <!-- <li class="menu__item"><a href="/logout" class="menu__item-icon icon-logout"></a></li> -->
         </ul>
